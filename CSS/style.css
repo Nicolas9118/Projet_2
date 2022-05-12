@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+/*  ----  Creation variable des couleurs utilisées  ----  */ 
+:root {                         /* Pseaudo class pour contenir toutes mes variables*/
+    --color-p: #0065FC;
+    --color-s: #DEEBFF;
+    --color-f: #F2F2F2;
+
+    --color-foncer: #000;     /*Pour changer facilement en mode sombre au besoin*/
+    --color-clair: #FFF;       /*Pour changer facilement en mode sombre au besoin*/
+}
+
+/*    ----  Général  ----  */
+*{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    max-width: 1440px;
+    min-width: 375px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /*border: 1px solid black;*/
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-foncer);
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+/*  ----  Une card en général  ----  */
+.card{
+    display: block;
+    width: 270px;
+    border: 5px solid var(--color-clair);
+    border-radius: 25px;
+    box-shadow: -5px 5px 5px grey;
+    background-color: var(--color-clair);
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.card img{
+    object-fit: cover;
+    height: 120px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.bleu{
+    color: var(--color-p);
+    font-size: 14px;
+}
+
+.gris{
+    color: var(--color-f);
+    font-size: 14px;
+}
+
+.card h3{
+    margin: 15px 20px 0 15px;
+}
+
+.card h4{
+    margin: 15px 0 15px 20px;
+}
+
+.card p{
+    margin: 5px 20px 5px 15px;
+}
+
+.note{
+    margin: 10px 20px 0 15px;
+    padding-bottom: 15px;
+}
+
+/*  ----  Header  ----  */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header img{
+    height: 72px;
+    width: auto;   
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+}
+
+.menu__case{
+    display: block;
+    width: 50%;
+    height: 72px;
+    text-align: center;
+    padding-top: 30px;
+    border: 3px solid transparent;
+    
+}
+
+.menu__case:hover{
+    color: var(--color-p);
+    border-top: 3px solid var(--color-p);
+}
+
+@media screen and (max-width: 768px){
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img{
+        margin-left: 50px;
+        height: 90px;
+    }
+
+    nav{
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .menu__case{
+        border-bottom: 3px solid var(--color-f);
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .menu__case:hover{
+        border-top: none;
+        border-bottom: 3px solid var(--color-p);
+    }
+}
+
+
+/*    ----  Section Search  ----  */
+.search{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 30px 5px;
+}
+
+.search p, .search h2{
+    margin: 5px 0;
+}
+
+/*    ----  Search Bar  ----  */
+.search-bar{
+    display: flex;
+    margin: 20px 0;
+}
+
+.search-bar__button{
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.search-bar__field{
+    width: 260px;
+    background-color: var(--color-clair);
+    border-top: 1px solid var(--color-f);
+    border-bottom: 1px solid var(--color-f);
+    padding-left: 10px;
+    border-radius: 0px;
+    text-align: left;
+}
+
+.search-bar__research{
+    width: 134px;
+    color: var(--color-clair);
+    background-color: var(--color-p);
+    border-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: -15px;
+}
+
+.search-bar__glass{
+    width: 52px;
+    border-radius: 15px;
+    color: var(--color-clair);
+    background-color: var(--color-p);
+    display: none;
+}
+
+
+/*  ----  Filter  ----  */
+.contain-filter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0 30px 5px;
+}
+
+.contain-filter .title{
+    margin-right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.allfilter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.allfilter__boutonfilter{
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--color-f);
+    border-radius: 50px;
+    padding-right: 20px;
+    margin: 10px 20px 10px 0;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.allfilter__boutonfilter:hover{
+    box-shadow: -5px 5px 5px grey;
+    background-color: var(--color-p);
+    color: var(--color-clair);
+}
+
+.allfilter__boutonfilter i{
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    color: var(--color-p);
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-s);
+    position: relative;
+    left: -10px;
+}
+
+/*  ----  Responsive Section "Search"  ----  */
+@media screen and (max-width: 768px){
+    .search-bar__research{
+        display: none;
+    }
+
+    .search-bar__glass{
+        display: block;
+    }
+}
+
+/*  ----  Information  ----  */
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.info i{
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    color: var(--color-p);
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--color-f);
+    margin-right: 15px;   
+}
+
+/*  ----  Hosting  ----  */
+.hosting{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.town{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    background-color: var(--color-f);
+    padding: 0 30px;
+    border-radius: 20px;
+}
+
+.town .contain-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.town .title{
+    margin: 25px 0 10px 0;
+}
+
+.town .more{
+    margin: 20px 0 20px 0;
+}
+
+.popular{
+    display: flex;
+    flex-direction: column;
+    width: 460px;
+    background-color: var(--color-f);
+    padding: 0 30px;
+    border-radius: 20px;
+}
+
+.popular .title{
+    margin: 40px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 800;
+}
+
+.popular .title i{
+    font-size: 24px;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.popular .contain-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-popular{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-popular img{
+    height: 124px;
+    width: 127px;
+    margin-right: 0;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+}
+
+/*  ----  Responsive Section Hosting  ----  */
+@media screen and (max-width: 1370px){
+    .hosting{
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    .town, .popular{
+        width: 768px;
+        margin: 20px 0;
+    }
+
+    .card-popular{
+        width: 440px;
+    }
+
+    .card-popular img{
+        height: 180px;
+        width: 165px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .town, .popular{
+        width: 500px;        
+    }
+
+    .town{
+        background-color: transparent;
+    }
+
+    .card{
+        width: 440px;
+    }
+
+    .card img{
+        height: 180px;
+    }
+
+    .more{
+        padding-left: 30px;
+    }
+}
+
+/*  ----  Activity  ----  */
+/*  ---- Placement des cards dans le contain  ----  */
+.activity .contain-card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.activity .contain-left,
+.activity .contain-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+}
+
+.activity .left,
+.activity .right{
+    width: 50%;
+    min-width: 310px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  ----  Taille des cards  ----  */
+.card100{
+    width: 300px;
+    border: 0;    
+}
+
+.card100 img{
+    height: 395px;
+}
+
+.card60{
+    width: 300px;
+    border: 0;
+}
+
+.card60 img{
+    height: 185px;
+}
+
+.card40{
+    width: 300px;
+    border: 0;
+}
+
+.card40 img{
+    height: 115px;
+}
+
+.card50{
+    width: 300px;
+    border: 0;
+}
+
+.card50 img{
+    height: 150px;
+}
+
+/*  ----  Responsive Section Activity  ----  */
+@media screen and (max-width: 768px) {   
+    .activity{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .activity h2{
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .activity .contain-left, .activity .contain-right,
+    .activity .left, .activity .right{
+        width: 500px; 
+        padding: 0;
+        margin: 15px 0;
+    }
+
+    .activity .contain-card, .activity .contain-left, .activity .contain-right{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card100, .card60, .card50, .card40{
+        width: 440px;
+    }
+
+    .card100 img, .card60 img, .card50 img, .card40 img{
+        height: 180px;
+    }
+}
+
+/*  -----  Footer  ----  */
+footer{
+    display: flex;
+    width: 100%;
+    background-color: var(--color-f);
+    margin-top: 20px;
+}
+
+.list{
+    width: 33%;
+    margin: 30px 0 30px 15px;
+}
+
+.list__title{
+    margin-bottom: 15px;
+    font-weight: 800;
+    
+}
+
+.list li{
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+/*  ---- Responcive Footer  ----  */
+@media screen and (max-width: 768px){
+    footer{
+        flex-direction: column;
+        align-items:  center;
+    }
+}
