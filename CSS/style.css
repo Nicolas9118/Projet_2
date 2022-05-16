@@ -23,8 +23,7 @@ body{
     padding-left: 5px;
     margin-left: auto;
     margin-right: auto;
-
-    /*border: 1px solid black;*/
+    position: absolute;
 }
 
 a{
@@ -191,6 +190,10 @@ nav{
     text-align: left;
 }
 
+.search-bar__field:focus{
+    outline: 1px solid var(--color-f);
+}
+
 .search-bar__research{
     width: 134px;
     color: var(--color-clair);
@@ -198,7 +201,7 @@ nav{
     border-radius: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    margin-left: -15px;
+    margin-left: -25px;
 }
 
 .search-bar__glass{
