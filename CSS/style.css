@@ -16,14 +16,21 @@
     font-family: 'Raleway', sans-serif;
 }
 
+html{   /* Pour centrer sur la page avec la position absolute*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 body{
     max-width: 1440px;
     min-width: 375px;
     padding-right: 5px;
     padding-left: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
+    position: absolute;     /*Nécessaire pour régler le problème sur chrome de bande blanche en changeant de résolution*/
+
+    /*margin-left: auto;
+    margin-right: auto;*/
 }
 
 a{
@@ -38,7 +45,7 @@ ul{
 /*  ----  Une card en général  ----  */
 .card{
     display: block;
-    width: 270px;
+    width: 260px;
     border: 5px solid var(--color-clair);
     border-radius: 25px;
     box-shadow: -5px 5px 5px rgba(12, 12, 12, 0.280);   ;
@@ -92,7 +99,6 @@ ul{
 header{
     display: flex;
     flex-direction: row;
-    /*width: 100%;*/
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -299,7 +305,7 @@ nav{
 /*  ----  Hosting  ----  */
 .hosting{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
 }
@@ -307,10 +313,10 @@ nav{
 .town{
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 880px;
     background-color: var(--color-f);
-    padding: 0 10px;
     border-radius: 20px;
+    margin-right: 40px;
 }
 
 .town .contain-card{
@@ -331,9 +337,8 @@ nav{
 .popular{
     display: flex;
     flex-direction: column;
-    width: 460px;
+    width: 440px;
     background-color: var(--color-f);
-    padding: 0 30px;
     border-radius: 20px;
 }
 
@@ -512,7 +517,7 @@ nav{
 }
 
 /*  ----  Responsive Section Activity  ----  */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1250px) {
     .card60 img, .card50 img, .card40 img{
         height: 150px;
     }
