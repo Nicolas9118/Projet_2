@@ -16,21 +16,12 @@
     font-family: 'Raleway', sans-serif;
 }
 
-html{   /* Pour centrer sur la page avec la position absolute*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 body{
     max-width: 1440px;
-    min-width: 375px;
+    min-width: 320px;
     padding-right: 5px;
     padding-left: 5px;
     position: absolute;     /*Nécessaire pour régler le problème sur chrome de bande blanche en changeant de résolution*/
-
-    /*margin-left: auto;
-    margin-right: auto;*/
 }
 
 a{
